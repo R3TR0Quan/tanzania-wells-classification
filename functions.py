@@ -1,9 +1,10 @@
 #import libraries
 import pandas as pd
 
-artifact_cols = ['funder', 'installer', 'recorded_by', 'region',
+artifact_cols = ['id', 'funder', 'recorded_by', 'region', 'wpt_name',
                 'payment', 'payment_type', 'source_type', 'source_class',
-                'water_quality', 'waterpoint_type_group', 'quantity_group']
+                'water_quality', 'waterpoint_type_group', 'quantity_group', 'extraction_type',
+                'extraction_type_group', 'num_private']
 
 #initialize empty df
 df = pd.DataFrame()
@@ -33,8 +34,23 @@ Parameters:
 Returns:
     pandas.DataFrame w\o columns with too many missing vals
 """
-def drop_near_empty_cols(data, thresh=.2):
+def drop_nulls(data, thresh=.1):
     #loop through columns
     for col in data.columns:
-        pass
+        if((data[col].isna().sum()/len(data[col]) > thresh)):
+            data = data.drop(col, axis=1)
+        else:
+            continue
+    data = data.dropna()
+    return data
 
+#combined drop artifact cols and nulls
+def drop_artefacts_and_nulls(data, thresh=.1):
+    """
+    Drops artefact features; drops columns with null values >10% and drops null rows
+    Params:panda.DataFrame
+    Returns:pandas.DataFrame(transformed)
+    """
+    data = del_irrelevant_cols(data)
+    data = drop_nulls(data, thresh=thresh)
+    return data
