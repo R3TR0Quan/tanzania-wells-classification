@@ -4,7 +4,7 @@ import pandas as pd
 artifact_cols = ['id', 'funder', 'recorded_by', 'region', 'wpt_name',
                 'payment', 'payment_type', 'source_type', 'source_class',
                 'water_quality', 'waterpoint_type_group', 'quantity_group', 'extraction_type',
-                'extraction_type_group', 'num_private', 'management']
+                'extraction_type_group', 'num_private', 'management', 'public_meeting']
 
 #initialize empty df
 df = pd.DataFrame()
@@ -53,4 +53,31 @@ def drop_artefacts_and_nulls(data, thresh=.1):
     """
     data = del_irrelevant_cols(data)
     data = drop_nulls(data, thresh=thresh)
+    return data
+
+# convert target column for binary classification
+def ternary_to_binary(data, target='status_group'):
+    """
+    Changes target values such that it fits a binary classification problem
+    Params: pandas.DataFrame, target(pamdas.Series)
+    Returns: pandas.DataFrame(target transformed)
+    """
+    data[target] = data[target].replace(['functional needs repair', 'non functional'], 'needs_repair')
+    return data
+
+#calculate age 
+def calculate_age(data, date_col='date_recorded', year_col='construction_year'):
+    """
+    Calculate age from 'construction_year'  and 'date_recorded'
+    Params:pandas.DataFrame
+    Returns: pandas.DataFrame
+    """
+    # Convert the date column to datetime format
+    data[date_col] = pd.to_datetime(data[date_col])
+    # Extract the year from the date column
+    data[date_col + '_year'] = data[date_col].dt.year
+    # Calculate the age column as the date column year - construction year
+    data['age'] =  data[date_col + '_year'] - data[year_col]
+    # Drop the original date column and the date column year
+    data.drop(columns=[date_col, date_col + '_year'], inplace=True)
     return data
