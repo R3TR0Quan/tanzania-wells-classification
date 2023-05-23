@@ -97,7 +97,7 @@ def print_cv_scores(pipe, X, y):
     print(result['train_accuracy'])
     print('Train Accuracy', result['train_accuracy'].mean())
     print('\n')
-    print(result['test_accuracy'], '\n')
+    print(result['test_accuracy'])
     print('Cross-Validation Accuracy', result['test_accuracy'].mean())
     print('\n')
     print('Training Recall:', result['train_recall'].mean())
