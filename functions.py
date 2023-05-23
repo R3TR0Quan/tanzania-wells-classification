@@ -25,6 +25,7 @@ def del_irrelevant_cols(data):
     df = data.drop(artifact_cols, axis=1)
     return df
 
+
 #drop columns with too many missing vals
 """
 Drops columns with missing values past threshold
@@ -45,6 +46,7 @@ def drop_nulls(data, thresh=.1):
             continue
     data = data.dropna()
     return data
+
 
 #combined drop artifact cols and nulls
 def drop_artefacts_and_nulls(data, thresh=.1):
@@ -67,6 +69,7 @@ def ternary_to_binary(data, target='status_group'):
     data[target] = data[target].replace(['functional needs repair', 'non functional'], 'needs_repair')
     return data
 
+
 #calculate age 
 def calculate_age(data, date_col='date_recorded', year_col='construction_year'):
     """
@@ -83,6 +86,7 @@ def calculate_age(data, date_col='date_recorded', year_col='construction_year'):
     # Drop the original date column and the date column year
     data.drop(columns=[date_col, date_col + '_year'], inplace=True)
     return data
+
 
 #model evaluation
 def cross_val_evaluate(pipe, X, y):
