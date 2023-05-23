@@ -4,7 +4,7 @@ import pandas as pd
 artifact_cols = ['id', 'funder', 'recorded_by', 'region', 'wpt_name',
                 'payment', 'payment_type', 'source_type', 'source_class',
                 'water_quality', 'waterpoint_type_group', 'quantity_group', 'extraction_type',
-                'extraction_type_group', 'num_private']
+                'extraction_type_group', 'num_private', 'management']
 
 #initialize empty df
 df = pd.DataFrame()
