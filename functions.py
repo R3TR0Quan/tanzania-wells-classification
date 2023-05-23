@@ -1,5 +1,6 @@
 #import libraries
 import pandas as pd
+from sklearn.model_selection import cross_validate
 
 artifact_cols = ['id', 'funder', 'recorded_by', 'region', 'wpt_name',
                 'payment', 'payment_type', 'source_type', 'source_class',
@@ -81,3 +82,23 @@ def calculate_age(data, date_col='date_recorded', year_col='construction_year'):
     # Drop the original date column and the date column year
     data.drop(columns=[date_col, date_col + '_year'], inplace=True)
     return data
+
+#model evaluation
+def print_cv_scores(pipe, X, y):
+    """
+    Cross validate using given pipeline and print scores
+    Params: pipeline, X, y
+    """
+    scoring = ['accuracy', 'recall']
+    #cross validate pipeline
+    result = cross_validate(pipe, X, y, 
+                            return_train_score=True, scoring=scoring)
+    
+    print(result['train_accuracy'])
+    print('Train Accuracy', result['train_accuracy'].mean())
+    print('\n')
+    print(result['test_accuracy'], '\n')
+    print('Cross-Validation Accuracy', result['test_accuracy'].mean())
+    print('\n')
+    print('Training Recall:', result['train_recall'].mean())
+    print('Test Recall:', result['test_recall'])
