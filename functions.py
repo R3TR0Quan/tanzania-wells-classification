@@ -1,6 +1,7 @@
 #import libraries
 import pandas as pd
 from sklearn.model_selection import cross_validate
+from sklearn.metrics import confusion_matrix, plot_confusion_matrix
 
 artifact_cols = ['id', 'funder', 'recorded_by', 'region', 'wpt_name',
                 'payment', 'payment_type', 'source_type', 'source_class',
@@ -84,9 +85,9 @@ def calculate_age(data, date_col='date_recorded', year_col='construction_year'):
     return data
 
 #model evaluation
-def print_cv_scores(pipe, X, y):
+def cross_val_evaluate(pipe, X, y):
     """
-    Cross validate using given pipeline and print scores
+    Cross validate using given pipeline and print scores and evaluate model
     Params: pipeline, X, y
     """
     scoring = ['accuracy', 'recall']
@@ -102,3 +103,6 @@ def print_cv_scores(pipe, X, y):
     print('\n')
     print('Training Recall:', result['train_recall'].mean())
     print('Test Recall:', result['test_recall'])
+    #confusion martix
+    plot_confusion_matrix(pipe, X, y, normalize='true')
+
