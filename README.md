@@ -84,17 +84,17 @@ The *runtime* does not justify using this model.
 > * `Best Model:` **XGBoost(tuned)**
 **File Hierarchy**
 .
-├── Data
+├── Data/
 │   ├── labelled_train_set.csv
 │   ├── test_set.csv
 │   ├── train_set.csv
 │   └── train_set_labels.csv
-├── deployables
+├── deployables/
 │   └── xgb_model.pkl
 ├── explore.ipynb
 ├── functions.py
-├── images
-│   ├── edaimages
+├── images/
+│   ├── edaimages/
 │   │   ├── classbalane.png
 │   │   ├── classimbalance.png
 │   │   ├── colgeneralization.png
@@ -104,7 +104,7 @@ The *runtime* does not justify using this model.
 │   └── water.jpg
 ├── LICENSE
 ├── modelling.ipynb
-├── pdf deliverables
+├── pdf deliverables/
 │   ├── explore.pdf
 │   ├── github.pdf
 │   ├── modelling.pdf
