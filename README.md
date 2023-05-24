@@ -85,31 +85,6 @@ The *runtime* does not justify using this model.
 
 **File Hierarchy**
 
-├── Data
-│   ├── labelled_train_set.csv
-│   ├── test_set.csv
-│   ├── train_set.csv
-│   └── train_set_labels.csv
-├── deployables
-│   └── xgb_model.pkl
-├── explore.ipynb
-├── functions.py
-├── images
-│   ├── edaimages
-│   │   ├── classbalane.png
-│   │   ├── classimbalance.png
-│   │   ├── colgeneralization.png
-│   │   ├── model.png
-│   │   └── numprivatevariable.png
-│   ├── pump.jpg
-│   └── water.jpg
-├── LICENSE
-├── modelling.ipynb
-├── pdf deliverables
-│   ├── explore.pdf
-│   ├── github.pdf
-│   ├── modelling.pdf
-│   └── presentation.pdf
-├── presentation.pptx
-└── README.md
-
+<p>
+    <img src='images/hierarchy.png' alt='Repo Hierarchy'>
+</p>
