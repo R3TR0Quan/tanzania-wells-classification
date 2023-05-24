@@ -83,8 +83,8 @@ The *runtime* does not justify using this model.
 
 > * `Best Model:` **XGBoost(tuned)**
 **File Hierarchy**
-.
-├── Data/
+
+├── Data /
 │   ├── labelled_train_set.csv
 │   ├── test_set.csv
 │   ├── train_set.csv
