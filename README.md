@@ -81,4 +81,4 @@ The *runtime* does not justify using this model.
 
 * Using a feature selector proved detrimental to the modelling process.
 
-> * `Best Model:` **logistic regression(tuned)**
+> * `Best Model:` **XGBoost(tuned)**
