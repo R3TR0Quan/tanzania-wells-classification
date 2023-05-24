@@ -69,4 +69,16 @@ A detailed description can be found [here](https://www.drivendata.org/competitio
 
 ## Conclusions
 
+* The Baseline **Logistic Regression** performs well on our classification metrics i.e **accuracy** and **recall**
+Accuracy is a valid metric as the class imbalance is negligible as seen in the data exploration
+
+* The **KNN model** performs similarly to the Logistic Regression. However, due to its exponentially increasing time complexity, this model has a much longer runtime
+The *runtime* does not justify using this model.
+
+* Both **Decision Trees** and their ensemble counterpart, **Random Forest** performed worse than the baseline model.
+
+* After tuning the Logistic Regression model, as it preforms best, we obtain the best parameters.
+
+* Using a feature selector proved detrimental to the modelling process.
+
 > * `Best Model:` **logistic regression(tuned)**
