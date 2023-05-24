@@ -106,7 +106,7 @@ def cross_val_evaluate(pipe, X, y):
     print('Cross-Validation Accuracy', result['test_accuracy'].mean())
     print('\n')
     print('Training Recall:', result['train_recall'].mean())
-    print('Test Recall:', result['test_recall'])
+    print('Test Recall:', result['test_recall'].mean())
     #confusion martix
     plot_confusion_matrix(pipe, X, y, normalize='true')
 
