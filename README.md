@@ -10,6 +10,7 @@ The Tanzania Ministry of Water along with Taarifa, a crowd-source platform, have
 <p align="center">
     <img scr="images/water.jpg" alt='water_impact_image'>
 </p>
+![water_impact](https://www.afdb.org/sites/default/files/a1-water.jpg)
 
 ## Project Objectives
 The main objective of this project undertaking is to build a Classification model that can be able to classify water wells in Tanzania as `functional` or those that need repairs `need_repair`
