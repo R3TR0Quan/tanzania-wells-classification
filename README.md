@@ -82,33 +82,34 @@ The *runtime* does not justify using this model.
 * Using a feature selector proved detrimental to the modelling process.
 
 > * `Best Model:` **XGBoost(tuned)**
+
 **File Hierarchy**
 
-├── Data /
-│   ├── labelled_train_set.csv
-│   ├── test_set.csv
-│   ├── train_set.csv
-│   └── train_set_labels.csv
-├── deployables/
-│   └── xgb_model.pkl
+├── Data
+│   ├── labelled_train_set.csv
+│   ├── test_set.csv
+│   ├── train_set.csv
+│   └── train_set_labels.csv
+├── deployables
+│   └── xgb_model.pkl
 ├── explore.ipynb
 ├── functions.py
-├── images/
-│   ├── edaimages/
-│   │   ├── classbalane.png
-│   │   ├── classimbalance.png
-│   │   ├── colgeneralization.png
-│   │   ├── model.png
-│   │   └── numprivatevariable.png
-│   ├── pump.jpg
-│   └── water.jpg
+├── images
+│   ├── edaimages
+│   │   ├── classbalane.png
+│   │   ├── classimbalance.png
+│   │   ├── colgeneralization.png
+│   │   ├── model.png
+│   │   └── numprivatevariable.png
+│   ├── pump.jpg
+│   └── water.jpg
 ├── LICENSE
 ├── modelling.ipynb
-├── pdf deliverables/
-│   ├── explore.pdf
-│   ├── github.pdf
-│   ├── modelling.pdf
-│   └── presentation.pdf
+├── pdf deliverables
+│   ├── explore.pdf
+│   ├── github.pdf
+│   ├── modelling.pdf
+│   └── presentation.pdf
 ├── presentation.pptx
 └── README.md
 
