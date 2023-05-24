@@ -1,6 +1,6 @@
 # Tanzania Water Wells Classification
 <p align="center">
-    <img scr="/images/pump.jpg" alt='pump_image'>
+    <img src="/images/pump.jpg" alt='pump_image'>
 </p>
 
 ## Problem Overview
@@ -8,9 +8,8 @@
 The Tanzania Ministry of Water along with Taarifa, a crowd-source platform, have commisioned the development of a predictive model that is supposed to be able to predict with **water wells** are likely to fail. While much of Tanzanias population has access to basic water services, a large 39% of households still lack this basic need. An estimated 10% of preventable deaths in the country can be attributed to inadequate *wash services*. A predictive model can enable quick **predictive maintenance** on water wells and help ensure water security in many of the rural communities that are disporportionately affected by this problem. 
 
 <p align="center">
-    <img scr="images/water.jpg" alt='water_impact_image'>
+    <img src="images/water.jpg" alt='water_impact_image'>
 </p>
-![water_impact](https://www.afdb.org/sites/default/files/a1-water.jpg)
 
 ## Project Objectives
 The main objective of this project undertaking is to build a Classification model that can be able to classify water wells in Tanzania as `functional` or those that need repairs `need_repair`
